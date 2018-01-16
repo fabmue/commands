@@ -1,0 +1,25 @@
+# get git status infos
+git status
+
+# add & push changes
+git add .
+git commit -a -m "message"
+git push
+
+# create a new local branch
+git checkout -b <branch>
+
+# push the new branch to remote
+git push -u origin <branch>
+
+# switch branch
+git checkout <branch>
+
+# get (detailed) branch info
+git branch
+git branch -vv
+
+# overwrite local changes
+git fetch --all
+git reset --hard origin/<branch_name>
+

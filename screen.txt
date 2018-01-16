@@ -1,0 +1,32 @@
+*** Titan ***
+
+## Screening ##
+start a new screen session with session name	
+	screen -S <name>
+
+terminate a screen session from inside the session
+	exit
+	Ctrl-A, :quit
+	
+list running sessions/screens
+	screen -ls
+
+attach to session name	
+	screen -r <name>
+
+detach screen session:
+	Ctrl-A, Ctrl-D
+
+
+check if you are running in a screen
+	$STY 
+
+scrolling in screens (might scroll in command history)
+	Ctrl-A, Esc
+	(enters copy mode) move up and down with arrows
+	Ctrl-Q to exit copy mode
+
+## Source environment ##
+
+source activate tensorflow
+

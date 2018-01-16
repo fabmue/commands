@@ -1,0 +1,10 @@
+// size of folder
+du -hs .
+du -hsc *
+
+// cpu usage
+htop
+
+// save to file and output
+
+<command> | tee allout.txt

@@ -1,0 +1,19 @@
+# show docker images
+docker images
+
+# show all active / inactive docker
+sudo docker ps -a
+docker container ls -a
+
+# remove all stopped dockers
+docker container prune
+
+# remove a docker
+docker container rm CONTAINTER_NAME
+
+# create new docker image
+docker build -t <image_tag> .
+
+
+
+

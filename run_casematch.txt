@@ -1,0 +1,39 @@
+# show active docker
+docker container ls -a
+
+# remove all stopped dockers
+docker container prune
+
+# 1) start mongodb
+sudo service mongod start
+
+
+# keras1 2) run medlearnserve keras1 from folder git/medlearnserve
+sudo docker run -it -p 5000:5000 -v $PWD:/opt/medlearnserve -v /home/fabian/develop/git/models:/home/fabian/develop/git/models --workdir /opt/medlearnserve --name=medlearnserve --detach=true eonum:mlbase python3 medlearnserve.py -c /home/fabian/develop/git/models/2017/model_nonuni/configuration.json
+
+# TEST 2) run medlearnserve TEST keras2 from folder git/medlearnserve
+sudo docker run -it -p 5000:5000 -v $PWD:/opt/medlearnserve  --workdir /opt/medlearnserve --name=medlearnserve --detach=true ml_k2 python3 medlearnserve.py -c test_data/test_output/configuration.json
+
+# 2) run medlearnserve keras2 from folder git/medlearnserve
+sudo docker run -it -p 5000:5000 -v $PWD:/opt/medlearnserve -v /home/fabian/develop/dev_models:/home/fabian/develop/dev_models --workdir /opt/medlearnserve --name=medlearnserve --detach=true ml_k2 python3 medlearnserve.py -c /home/fabian/develop/dev_models/output/configuration.json
+
+# check "docker logs --details medlearnserve"
+
+
+# 3) run grouperserve from folder git/grouperserve
+sudo docker run -v $PWD:/opt/grouperserve -p 4567:4567 --workdir /opt/grouperserve --name=grouperserve --detach=true openjdk:8 java -cp build/libs/grouperserve-0.1.1.jar ch.eonum.grouperserve.GrouperServe
+
+# check http://localhost:4567/systems
+
+# 4) go to git/casematch
+check: 	rake test
+run: 	rails s
+
+check:  localhost:3000/admin/edit
+
+
+
+
+
+
+

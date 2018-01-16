@@ -1,0 +1,11 @@
+# start / stop / restart mongodb
+sudo service mongod start
+sudo service mongod stop
+sudo service mongod restart
+
+# status info
+sudo service mongod status
+
+# check the logs
+less /var/log/mongodb/mongod.log  
+cat /var/log/mongodb/mongod.log 
